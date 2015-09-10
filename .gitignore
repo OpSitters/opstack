@@ -1,0 +1,13 @@
+# private stuff (local)
+/private
+
+# Only include the default env
+/environments/*
+!environments/default/
+
+# misc file exts
+*.exe
+*.orig
+*.test
+.*.swp
+.DS_Store

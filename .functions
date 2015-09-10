@@ -1,0 +1,16 @@
+
+function opstack() {
+  if [ $# -ne 1 ]; then
+    echo "Usage: opstack <environment>";
+    return;
+  fi;
+
+  if [ -f $OPSTACK_DIR/environments/$1/accounts.json ]; then
+    eval "export OPSTACK_ENV=$1"
+    eval "$(chef exec ${OPSTACK_DIR}/bin/load_accounts.rb)"
+    echo "opstack $1 environment loaded";
+  else
+    echo "opstack $1 environment not found";
+    return 1;
+  fi;
+}

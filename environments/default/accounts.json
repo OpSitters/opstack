@@ -1,0 +1,42 @@
+{
+  "chef": {
+    "user": "sal",
+    "email": "sal@opsitters.com",
+    "url" : "api.opscode.com/organizations/opstack",
+    "pem" : "opstack_user.pem",
+    "bootstrap": {
+      "version" : "11.16.4",
+      "template" : "opstack_default.erb"
+    },
+    "keys" : {
+      "secret_key" : "opstack_secret_key",
+      "production_secret_key" : "opstack_production_secret_key"
+    }
+  },
+  "ssh" :{
+    "username" : "sal",
+    "chef_attribute" : "ipaddress",
+    "public_key" : "~/.ssh/id_rsa.pub",
+    "private_key" : "~/.ssh/id_rsa"
+  },
+  "aws": {
+    "api_key": "XXXXXXXXXXXXXXXXXXXX",
+    "api_secret": "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+    "ssh_key_id": "sal_key",
+    "region": "us-east-1"
+  },
+  "digitalocean": {
+    "access_token": "YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY",
+    "ssh_key_id" : "sal_key"
+  },
+  "rackspace" : {
+    "master_account": "111111",
+    "master_user": "opstack",
+    "master_key": "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUU",
+    "user_account": "222222",
+    "user": "opsitters",
+    "key": "QQQQQQQQQQQQQQQQQQQQQQQQQQQQ",
+    "ssh_key_id": "sal_key",
+    "region": "iad"
+  }
+}
