@@ -8,7 +8,7 @@
 `gem install opstack`
 
 ##Importing an environment
-``opstack env import demo demo/accounts.json)`` will read the json file with your config variables and save them as an encrypted json file in the opstack config directory (~/.opstack)
+``opstack env import demo demo/accounts.json`` will read the json file with your config variables and save them as an encrypted json file in the opstack config directory (~/.opstack)
 
 ##Export an environment to bash
 ``eval $(opstack env export demo `` will export the environment variables for the demo enviornment
