@@ -4,6 +4,9 @@
 
 ----------
 
+## Installing OpStack ##
+`gem install opstack`
+
 ##Importing an environment
 ``opstack env import demo demo/accounts.json)`` will read the json file with your config variables and save them as an encrypted json file in the opstack config directory (~/.opstack)
 
