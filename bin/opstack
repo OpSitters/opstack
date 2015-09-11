@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require 'opstack'
+require 'opstack/cli'
+
+#OpStack::Exporter.new.run(prefix,data_bag.to_hash)
+
+OpStack::CLI.start(ARGV, {:shell=>Thor::Shell::Color.new})

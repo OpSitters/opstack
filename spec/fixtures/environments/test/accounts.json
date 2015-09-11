@@ -1,0 +1,38 @@
+{
+  "chef": {
+    "user": "opstack_chef",
+    "email": "oss@opsitters.com",
+    "url" : "api.opscode.com/organizations/opsitters",
+    "pem" : "opstack.pem",
+    "bootstrap": {
+      "version" : "11.16.4",
+      "template" : "opstack-bootstrap.erb"
+    },
+    "keys" : {
+      "secret_key" : "opstack_secret_key",
+    }
+  },
+  "ssh" :{
+    "username" : "opstack_ssh",
+    "chef_attribute" : "ipaddress",
+    "public_key" : "opstack.id_rsa.pub",
+    "private_key" : "opstack.id_rsa"
+  },
+  "aws": {
+    "api_key": "AWS_TEST_API_KEY",
+    "api_secret": "AWS_TEST_API_SECRET",
+    "ssh_key_id": "opstack_aws_key",
+    "region": "us-east-1"
+  },
+  "digitalocean": {
+    "access_token": "DO_TEST_ACCESS_TOKEN",
+    "ssh_key_id" : "1111"
+  },
+  "rackspace" : {
+    "user_account": "123456",
+    "user": "RAX_OPSTACK_USER",
+    "key": "RAX_TEST_KEY",
+    "ssh_key_id": "opstack_rax_key",
+    "region": "iad"
+  }
+}

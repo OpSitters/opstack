@@ -1,13 +1,25 @@
-# private stuff (local)
-/private
-
-# Only include the default env
-/environments/*
-!environments/default/
-
 # misc file exts
-*.exe
-*.orig
 *.test
 .*.swp
 .DS_Store
+
+*.gem
+*.rbc
+.bundle
+.config
+.yardoc
+.chef
+Gemfile.lock
+opstack.gemspec.lock
+InstalledFiles
+_yardoc
+coverage
+doc/
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+test/tmp
+test/version_tmp
+tmp
+vendor/
