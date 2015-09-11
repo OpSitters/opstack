@@ -11,11 +11,11 @@ Gem::Specification.new do |spec|
   spec.description   = %q{A Gem to manage your chef workstation stacks}
   spec.summary       = %q{opstack!}
   spec.homepage      = %q{http://rubygems.org/gems/opstack}
-  spec.license       = ['MIT', 'GPL-2']
+  spec.licenses       = ['MIT', 'GPL-2']
 
-  spec.add_dependency 'chef', '>= 11.0'
-  spec.add_runtime_dependency 'thor', '>= 0.19.1'
-  spec.add_runtime_dependency "ansi"
+  spec.add_runtime_dependency 'ansi'
+  spec.add_runtime_dependency 'chef', '>= 11.0'
+  spec.add_runtime_dependency 'thor'
 
   spec.add_development_dependency 'bundler', '~> 1.3'
   spec.add_development_dependency 'coveralls'
