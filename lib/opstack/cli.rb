@@ -17,11 +17,7 @@ module OpStack
       true
     end
 
-    desc "hello NAME", "say hello to NAME"
-    def hello(name)
-      puts "Hello #{name}"
-    end
-    desc "env SUBCOMMAND ...ARGS", "stuff"
+    desc "env SUBCOMMAND ...ARGS", "environment comands"
     subcommand "env", OpStack::Commands::Env
   end
 end
