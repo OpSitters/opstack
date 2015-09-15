@@ -17,7 +17,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'thor'
 
   spec.add_development_dependency 'bundler', '~> 1.3'
-  spec.add_development_dependency 'chef'
   spec.add_development_dependency 'coveralls'
   spec.add_development_dependency 'guard', '~> 2.8'
   spec.add_development_dependency 'guard-rspec', '~> 4.3'

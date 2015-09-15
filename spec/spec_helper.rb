@@ -1,16 +1,9 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib', 'opstack'))
 require 'rspec'
-require 'chef'
 require 'coveralls'
 require 'simplecov'
 require 'simplecov-console'
 
-RSpec.configure do |c|
-  c.before(:each) do
-    Chef::Config.reset
-    Chef::Config[:knife] = {}
-  end
-end
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   Coveralls::SimpleCov::Formatter,
