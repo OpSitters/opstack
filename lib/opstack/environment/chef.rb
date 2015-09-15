@@ -30,6 +30,7 @@ module OpStack
         begin
           data = JSON.parse(File.read(file))
           encrypted_data = ::Chef::EncryptedDataBagItem.encrypt_data_bag_item(data, secret)
+          FileUtils.mkdir_p("#{config[:config_dir]}/environments/#{environment}")#dir
           File.write(databag_file, JSON.pretty_generate(encrypted_data))
         rescue Errno::ENOENT
           OpStack.logger.error("File #{file} Not Found."); return nil
