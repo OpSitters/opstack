@@ -10,13 +10,11 @@ module OpStack
 
         begin
           encrypted_data = JSON.parse(File.read(databag_file))
-          data_bag = ::Chef::EncryptedDataBagItem.new(encrypted_data, secret).to_hash
+          data_bag = OpStack::Encryption.new().decryptor(encrypted_data,secret).decrypted_hash
         rescue Errno::ENOENT
           OpStack.logger.error("Environment #{environment} Not Found."); return nil
         rescue JSON::ParserError
           OpStack.logger.error("Could not Parse #{databag_file}"); return nil
-        rescue ::Chef::EncryptedDataBagItem::DecryptionFailure
-          OpStack.logger.error("Could not decrypt #{databag_file}"); return nil
         end
         
       end
@@ -29,13 +27,11 @@ module OpStack
 
         begin
           data = JSON.parse(File.read(file))
-          encrypted_data = ::Chef::EncryptedDataBagItem.encrypt_data_bag_item(data, secret)
-          FileUtils.mkdir_p("#{config[:config_dir]}/environments/#{environment}")#dir
+          encrypted_data = OpStack::Encryption.new().encryptor(data,secret).encrypted_hash
+          FileUtils.mkdir_p("#{config[:config_dir]}/environments/#{environment}")
           File.write(databag_file, JSON.pretty_generate(encrypted_data))
         rescue Errno::ENOENT
           OpStack.logger.error("File #{file} Not Found."); return nil
-        rescue ::Chef::EncryptedDataBagItem::EncryptionFailure
-          OpStack.logger.error("Could not encrypt the data"); return nil
         end
       end
 
