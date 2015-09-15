@@ -15,3 +15,5 @@ before_install:
   - bundle --version
 script: bundle exec rake spec
 
+notifications:
+  slack: opsitters:1JgzjUr95LlRw2Xy6gPEyHqT
