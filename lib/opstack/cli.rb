@@ -1,5 +1,5 @@
 require 'thor'
-require 'opstack/logger'
+require 'opstack/logging'
 require 'opstack/commands'
 
 module OpStack

@@ -1,6 +1,6 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib', 'opstack'))
 require 'rspec'
-require 'chef/encrypted_data_bag_item'
+require 'chef'
 require 'coveralls'
 require 'simplecov'
 require 'simplecov-console'
