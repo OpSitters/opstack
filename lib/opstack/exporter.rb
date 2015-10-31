@@ -1,3 +1,5 @@
+require 'shellwords'
+
 module OpStack
   class Exporter
     def run(prefix, hash)
@@ -18,7 +20,7 @@ module OpStack
     end
 
     def _export(var, val)
-      puts "export #{var}='#{val}'"
+      puts "export #{var}=#{val.shellescape}"
     end
   end
 end
